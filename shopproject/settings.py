@@ -116,9 +116,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = {
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
-}
+]
 
 
 # Email
@@ -129,3 +129,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'welcome'
+LOGOUT_URL = 'login'
