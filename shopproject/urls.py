@@ -4,6 +4,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,4 +20,5 @@ urlpatterns = [
             template_name='welcome.html',
         )), name='welcome'),
     
+    path('api/', include('customer.urls')),
 ]
